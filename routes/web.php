@@ -41,6 +41,7 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 /**
  Auth::routes(); 等同于以下路由
  // 用户身份验证相关的路由
