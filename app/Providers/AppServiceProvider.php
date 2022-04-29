@@ -24,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \Illuminate\Pagination\Paginator::useBootstrap();
+        // 为 Topic 模型注册观察者
+        \App\Models\Topic::observe(\App\Observers\TopicObserver::class);
     }
 }
