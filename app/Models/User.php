@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, MustVerifyEmailTrait, HasRoles;
-    use Traits\ActiveUserHelper;
+    use Traits\ActiveUserHelper, Traits\LastActivedAtHelper;
 
     /**
      * The attributes that are mass assignable.
