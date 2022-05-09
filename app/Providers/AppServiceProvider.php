@@ -26,10 +26,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
 	{
 		\App\Models\User::observe(\App\Observers\UserObserver::class);
-		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
-
-        \Illuminate\Pagination\Paginator::useBootstrap();
         // 为 Topic 模型注册观察者
         \App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+        \App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
+
+        \Illuminate\Pagination\Paginator::useBootstrap();
+
     }
 }
