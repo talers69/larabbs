@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         // API 中间件组，应用于 routes/api.php 路由文件，
         // 在 RouteServiceProvider 中设定
         'api' => [
+            // 指定响应格式
+            \App\Http\Middleware\AcceptHeader::class,
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             // 使用别名来调用中间件
             // 请见：https://learnku.com/docs/laravel/9.x/middleware#为路由分配中间件
