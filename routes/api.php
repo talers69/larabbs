@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function() {
+Route::prefix('v1')->namespace('Api')->name('api.v1.')->middleware('change-locale')->group(function() {
     Route::middleware('throttle:' . config('api.rate_limits.sign'))->group(function () {
         // 短信验证码
         Route::post('verificationCodes', 'VerificationCodesController@store')->name('verificationCodes.store');
